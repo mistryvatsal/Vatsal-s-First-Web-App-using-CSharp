@@ -16,17 +16,6 @@ namespace FirstWebApp
             MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
             string query = "SELECT * FROM test.dotnetapp";
-            /*MySqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = query;
-            MySqlDataReader reader = cmd.ExecuteReader();
-            string temp = "";
-            while(reader.Read() && reader.HasRows)
-            {
-                temp += reader.GetString(reader.GetOrdinal("user_name"));
-            }
-            conn.Close();
-            output.Text = temp;*/
-
             MySqlDataAdapter sda = new MySqlDataAdapter(query, conn);
             DataTable d = new DataTable();
             sda.Fill(d);
